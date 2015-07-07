@@ -104,18 +104,19 @@ namespace Proyect1.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,IdUser,ProductName,Description,Status,RegisterDate")] Products products, HttpPostedFileBase upload)
         {
-            var productsUpdate = db.Products.Find(products.Id);
+            //var productsUpdate = db.Products.Find(products.Id);
             if (ModelState.IsValid)
             {
 
                 if (upload != null && upload.ContentLength > 0)
                 {
-                    if (productsUpdate.Files.Any(f => f.FileType == FileType.Imagen))
+                    if (products.Files.Any(f => f.FileType == FileType.Imagen))
                     {
-                        db.Files.Remove(productsUpdate.Files.First(f => f.FileType == FileType.Imagen));
+                        db.Files.Remove(products.Files.First(f => f.FileType == FileType.Imagen));
                     }
                     var avatar = new File
                     {
+
                         FileName = System.IO.Path.GetFileName(upload.FileName),
                         FileType = FileType.Imagen,
                         ContentType = upload.ContentType
@@ -124,13 +125,13 @@ namespace Proyect1.Controllers
                     {
                         avatar.Content = reader.ReadBytes(upload.ContentLength);
                     }
-                    productsUpdate.Files = new List<File> { avatar };
+                    products.Files = new List<File> { avatar };
                 }
-                db.Entry(productsUpdate).State = EntityState.Modified;
+                db.Entry(products).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            return View(productsUpdate);
+            return View(products);
         }
 
         // GET: Products/Delete/5

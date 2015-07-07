@@ -25,12 +25,13 @@ namespace Proyect1.Models
         {
         }
 
+        public DbSet<File> Files { get; set; }
+
+        public System.Data.Entity.DbSet<Proyect1.Models.Products> Products { get; set; }
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();
         }
-        public DbSet<File> Files { get; set; }
-
-        public System.Data.Entity.DbSet<Proyect1.Models.Products> Products { get; set; }
+        
     }
 }

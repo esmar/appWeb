@@ -32,6 +32,10 @@ namespace Proyect1.Models
         {
             return new ApplicationDbContext();
         }
+
+        public System.Data.Entity.DbSet<Proyect1.Models.Transactions> Transactions { get; set; }
+
+       
         
     }
 }

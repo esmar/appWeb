@@ -27,5 +27,10 @@ namespace Proyect1.Controllers
 
             return View();
         }
+        public ActionResult PublicView()
+        {
+            ViewBag.Message = "Products View";
+            return RedirectToAction("Index","Transactions");
+        }
     }
 }

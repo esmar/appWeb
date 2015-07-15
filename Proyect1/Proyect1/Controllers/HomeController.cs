@@ -11,6 +11,7 @@ namespace Proyect1.Controllers
     {
         public ActionResult Index()
         {
+            ViewBag.Message = "Enjoy changing products with";
             return View();
         }
 
@@ -30,7 +31,7 @@ namespace Proyect1.Controllers
         public ActionResult PublicView()
         {
             ViewBag.Message = "Products View";
-            return RedirectToAction("Index","Transactions");
+            return RedirectToAction("Index","Products_Trans");
         }
     }
 }

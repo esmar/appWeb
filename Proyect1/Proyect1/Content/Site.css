@@ -1,17 +1,253 @@
-﻿body {
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
+﻿input,
 select,
 textarea {
     max-width: 280px;
+}
+
+#registerForm, #loginForm, #other-service {
+  padding:2%;
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, .25);
+  box-shadow: 0 0 10px rgba(0, 0, 0, .25);
+  margin:0 auto;
+  margin-top: 12%;
+  max-width: 42em;
+  position: relative;
+  margin-bottom:5%;
+}
+
+#registerForm {
+    left: 25%;
+}
+
+#other-service {
+    margin: 50% 25% 0 0;
+}
+
+.form-location {
+    margin-left: 5%;
+}
+
+.form-group{
+    text-align:left;
+}
+
+footer {
+   position: fixed; /*relative*/
+   bottom:0;
+   width:100%;
+   height:30px;
+}
+footer , #registerForm, #loginForm {
+    text-align:center;
+}
+
+.box{
+  margin: 100px auto;
+  width: 300px;
+  height: 50px;
+}
+
+/*** SEARCH MENU ***/
+input {
+	outline: none;
+}
+input[type=search] {
+	-webkit-appearance: textfield;
+	-webkit-box-sizing: content-box;
+	font-family: inherit;
+	font-size: 100%;
+}
+/* search input field */
+input[type=search] {
+	background: #ededed url(img/search-icon.png) no-repeat 9px center;
+	border: solid 1px #ccc;
+	padding: 9px 10px 9px 32px;
+	width: 70px;
+	
+	-webkit-border-radius: 30em;
+	-moz-border-radius: 30em;
+	border-radius: 30em;
+	
+	-webkit-transition: all .3s;
+	-moz-transition: all .3s;
+	transition: all .3s;
+}
+input[type=search]:focus {
+	width: 400px;
+	background-color: #fff;
+	border-color: #6dcff6;
+	
+	-webkit-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	-moz-box-shadow: 0 0 5px rgba(109,207,246,.5);
+	box-shadow: 0 0 5px rgba(109,207,246,.5);
+}
+input[type=search]:hover {
+	width: 400px;
+}
+
+.jumbotron {
+    background: url(img/books.jpg) center;
+    height: 600px;
+}
+
+.form-group, .col-md-10{
+    padding-left: 20px;
+}
+
+/*** close and new **/
+#close{
+    background: url(img/close-min.png) no-repeat center;
+    background-color: black;
+    width: 25px;
+    height: 24px;
+    border-radius: 50px;
+    margin: 5px;
+    cursor: pointer;
+    box-shadow: none;
+    float: right;
+    outline: none;
+    visibility: hidden;
+}
+.new{
+    background: url(img/bg.jpg) no-repeat center;
+    outline: none;
+    display: inline-block;
+    border-radius: 10px;
+    width: 150px;
+    height: 150px;
+    margin: 5px;
+}
+
+#product-back {
+    background: url(img/poligon.jpg);
+    height: 500px;
+}
+
+#img-prod {
+    margin-top: 100px;
+    width:500px;
+    height: 300px;
+    margin-left: 30%;
+}
+
+.btn-change {
+    margin-left: 400px;
+}
+
+/*Vertical Menu*/
+.vertical_menu {
+    margin: 10px;
+    width: 250px;
+    height: 100%;
+}
+.vertical_menu, product_list, .menu_simple, .info{
+    float: left;
+}
+
+.dl-horizontal{
+    padding-left: 0%;
+    float: left;
+    margin-top: 20%;
+}
+
+.dt-horizontal {
+  display: inline-table;
+  -webkit-margin-before: 1em;
+  -webkit-margin-after: 1em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+
+  margin: 3% 0 2% 10%;
+}
+.delete-form {
+    margin-left: 30%;
+}
+
+.account_image {
+    width:200px;
+    height:200px;
+    background: url(img/user.png) no-repeat center;
+    background-color: #b4bad2;
+    opacity: 0.9;
+    margin-left: 50%
+}
+
+.btn-trash {
+    margin-left: 10%;
+}
+
+/* CSSTerm.com Simple CSS menu */
+/*.menu_simple ul {
+    background-color: #005555;
+    margin: 0;
+    padding: 0;
+    width:300px;
+    height: 455px;
+    list-style-type: none;
+}
+
+.menu_simple ul li a {
+    text-decoration: none;
+    color: white;
+    padding: 10.5px 11px;
+    background-color: #005555;
+    display:block;
+}
+
+.menu_simple ul li a:visited {
+    color: white;
+}
+
+.menu_simple ul li a:hover, .menu_simple ul li .current, .menu_simple ul li a:active{
+    color: white;
+    background-color: #5FD367;
+}*/
+
+#header-font {
+    font: bold 34px “Century Schoolbook”, Georgia, Times, serif;
+    color: #FFFFFF;
+    font-size: 3em;
+    line-height: 90%;
+    margin: .8em 0 .4em 0;
+    letter-spacing: -2px;
+}
+
+.brand-font {
+    font-family: Georgia,”Times New Roman”,serif; 
+    font-size: 18px;
+    font-weight: bold; 
+    color: white; 
+    line-height: 22px; 
+    margin: 0; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info {
+    margin-left: 15%;
+}
+.image-info {
+    float: left;
+    margin-top: 50px;
+}
+
+#image-title {
+    margin-left: 50%;
+    font-size: 16px;
+    width: 300px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#user_name {
+    font-family: 'Open Sans',Arial,sans-serif;
+}
+
+#user-details {
+    font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.main-header {
+    margin-bottom: 0;
+    height: 45px;
 }

@@ -1,12 +1,13 @@
 ﻿
 @{
     ViewBag.Title = "StartTransaction";
+    var my_prod = @ViewBag.Product.Id;
 }
 
-<h2>StartTransaction</h2>
-
-<h3>Product of Interest :</h3>
-
+<div style="margin-top: 100px;">
+    <div style="margin: 10px 0 20px 80%">
+        <a href="~/Transactions/Index"><input class="btn btn-success" value="<< Back to List" /></a>
+    </div>
     <table class="table">
         <tr>
             <th>
@@ -39,7 +40,7 @@
                     @ViewBag.Product.RegisterDate
                 </td>
                 <td>
-                    @Html.ActionLink("Details", "Details", new { id = @ViewBag.Product.Id }) 
+                    @Html.ActionLink("Details", "Details", new { id = @ViewBag.Product.Id }, new { @class = "btn btn-primary" }) 
                     
                 </td>
             </tr>
@@ -47,46 +48,51 @@
 
     </table>
 
+    
 
     @foreach (var item1 in ViewBag.Products)
     {
-        <table class="table">
-            <tr>
-                <th>
-                    Name
-                </th>
-                <th>
-                    Descripcion
-                </th>
-                <th>
-                    Status
-                </th>
-                <th>
-                    DateRegistration
-                </th>
-                <th></th>
-            </tr>
+        if (item1.Id != my_prod)
+        {
+            <table class="table">
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Descripcion
+                    </th>
+                    <th>
+                        Status
+                    </th>
+                    <th>
+                        DateRegistration
+                    </th>
+                    <th></th>
+                </tr>
 
 
-            <tr>
-                <td>
-                    @item1.ProductName
-                </td>
-                <td>
-                    @item1.Description
-                </td>
-                <td>
-                    @item1.Status
-                </td>
-                <td>
-                    @item1.RegisterDate
-                </td>
-                <td>
-                    @Html.ActionLink("Change", "Create", new { id = @item1.Id , id2 =@ViewBag.Product.Id})
+                <tr>
+                    <td>
+                        @item1.ProductName
+                    </td>
+                    <td>
+                        @item1.Description
+                    </td>
+                    <td>
+                        @item1.Status
+                    </td>
+                    <td>
+                        @item1.RegisterDate
+                    </td>
+                    <td>
+                        @Html.ActionLink("Change", "Create", new { id = @item1.Id, id2 = @ViewBag.Product.Id }, new { @class = "btn btn-primary" })
 
-                </td>
-            </tr>
+                    </td>
+                </tr>
 
 
-        </table>
+            </table>
+        }
     }
+</div>

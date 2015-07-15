@@ -6,55 +6,54 @@
 
 <h2>Details</h2>
 
-<div>
-    <h4>Products</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        @if (Model.Files.Any(f => f.FileType == Proyect1.Models.FileType.Imagen))
-        {
+<div class="form-horizontal">
+        <h4>Product</h4>
+        <hr />
+        <dl class="dl-horizontal" style="margin-top: 50px;">
+            @if (Model.Files.Any(f => f.FileType == Proyect1.Models.FileType.Imagen))
+            {
+                <dt>
+                    Image
+                </dt>
+                <dd>
+                    <img style="width: 200px; height: 200px;" src="~/File?id=@Model.Files.First(f => f.FileType == Proyect1.Models.FileType.Imagen).FileId" alt="avatar" />
+                </dd>
+            }
+
             <dt>
-                Imagen
+                @Html.DisplayNameFor(model => model.ProductName)
             </dt>
+
             <dd>
-                <img src="~/File?id=@Model.Files.First(f => f.FileType == Proyect1.Models.FileType.Imagen).FileId" alt="avatar" />
+                @Html.DisplayFor(model => model.ProductName)
             </dd>
-        }
 
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Description)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Description)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.Status)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.Status)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
+            <dt>
+                @Html.DisplayNameFor(model => model.RegisterDate)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
+            <dd>
+                @Html.DisplayFor(model => model.RegisterDate)
+            </dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.RegisterDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RegisterDate)
-        </dd>
-
-    </dl>
-</div>
-<p>
-    @Html.ActionLink("Back to List", "ComeBacks", new { id = Model.Id }) |
-   
-</p>
+        </dl>
+    </div>
+    <div>
+        @Html.ActionLink("<< Back to List", "ComeBacks", new { id = Model.Id }, new { @class = "btn btn-success" })
+    </div>

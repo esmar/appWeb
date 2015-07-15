@@ -18,7 +18,6 @@ namespace Proyect1.Models
         public string Description { get; set; }
 
         public string Status { get; set; }
-        [DataType(DataType.DateTime)]
 
         public DateTime RegisterDate { get; set; }
 

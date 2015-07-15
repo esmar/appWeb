@@ -2,66 +2,28 @@
 
 @{
     ViewBag.Title = "Details";
+    var user_name = User.Identity.Name;
 }
 
-<h2>Details</h2>
-
-<div>
-    <h4>Products</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        @if (Model.Files.Any(f => f.FileType == Proyect1.Models.FileType.Imagen))
-        {
-            <dt>
-                Imagen
-            </dt>
-            <dd>
-                <img src="~/File?id=@Model.Files.First(f => f.FileType == Proyect1.Models.FileType.Imagen).FileId" alt="avatar" />
-            </dd>
-        }
-        @*<dt>
-            @Html.DisplayNameFor(model => model.IdUser)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.IdUser)
-        </dd>*@
-
-        <dt>
-            @Html.DisplayNameFor(model => model.ProductName)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.ProductName)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Description)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Description)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Status)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Status)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.RegisterDate)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.RegisterDate)
-        </dd>
-
-    </dl>
+@if (Model.Files.Any(f => f.FileType == Proyect1.Models.FileType.Imagen))
+{
+    <dd id="product-back">
+        <img id="img-prod" src="~/File?id=@Model.Files.First(f => f.FileType == Proyect1.Models.FileType.Imagen).FileId" alt="avatar" />
+    </dd>
+}
+<div class="card__content">
+    <a class="link" href="~/Products/Index"><i class="card__btn-close fa fa-times"></i></a>
+    <div class="card__caption">
+        <h2 class="card__title">@Html.DisplayFor(model => model.ProductName)</h2>
+    </div>
+    <div class="card__copy">
+        <div class="meta">
+            <img class="meta__avatar" src="~/Content/img/user-blue.png" alt="author01" />
+            <span class="meta__author">@user_name</span>
+            <div class="change_btn">
+                @Html.DisplayFor(model => model.RegisterDate)
+            </div>
+        </div>
+        @Html.DisplayFor(model => model.Description)
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>

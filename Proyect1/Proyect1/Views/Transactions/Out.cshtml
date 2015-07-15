@@ -47,8 +47,8 @@
 
             </td>
             <td>
-                @Html.ActionLink("Complete", "Complete", new { id = @item1.Id })
-                @Html.ActionLink("Cancel", "Cancel", new { id = @item1.Id });
+                @Html.ActionLink("Complete", "Complete", new { id = @item1.Id }, new { @class = "btn btn-primary" })
+                @Html.ActionLink("Cancel", "Cancel", new { id = @item1.Id }, new { @class = "btn btn-danger" })
             </td>
         </tr>
 

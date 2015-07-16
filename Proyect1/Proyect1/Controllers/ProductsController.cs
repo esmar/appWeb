@@ -14,6 +14,8 @@ using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Proyect1.Controllers
 {
+    [RoutePrefix ("My_Products")]
+    [Route("{action=index}")]
     public class ProductsController : Controller
     {
         private ApplicationDbContext db = new ApplicationDbContext();
@@ -27,6 +29,7 @@ namespace Proyect1.Controllers
         }
 
         // GET: Products/Details/5
+        [Route("Details/{message:maxlength(3)?}")]
         public ActionResult Details(int? id)
         {
             if (id == null)
@@ -83,6 +86,7 @@ namespace Proyect1.Controllers
         }
 
         // GET: Products/Edit/5
+        [Route("Edit/{message:maxlength(3)?}")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -137,6 +141,7 @@ namespace Proyect1.Controllers
         }
 
         // GET: Products/Delete/5
+        [Route("Delete/{message:maxlength(3)?}")]
         public ActionResult Delete(int? id)
         {
             if (id == null)

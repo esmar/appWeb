@@ -6,26 +6,19 @@
 
 <h2>Details</h2>
 
-<div>
+<div class="form-horizontal">
     <h4>Products</h4>
     <hr />
-    <dl class="dl-horizontal">
-@if (Model.Files.Any(f => f.FileType == Proyect1.Models.FileType.Imagen))
-{
-    <dt>
-        Imagen
-    </dt>
-    <dd>
-        <img src="~/File?id=@Model.Files.First(f => f.FileType == Proyect1.Models.FileType.Imagen).FileId" alt="avatar" />
-    </dd>
-}
-        @*<dt>
-            @Html.DisplayNameFor(model => model.IdUser)
-        </dt>*@
-
-        @*<dd>
-            @Html.DisplayFor(model => model.IdUser)
-        </dd>*@
+    <dl class="dl-horizontal" style="margin-top: 50px;">
+        @if (Model.Files.Any(f => f.FileType == Proyect1.Models.FileType.Imagen))
+        {
+            <dt>
+                Imagen
+            </dt>
+            <dd>
+                <img style="width: 200px; height: 200px;" src="~/File?id=@Model.Files.First(f => f.FileType == Proyect1.Models.FileType.Imagen).FileId" alt="avatar" />
+            </dd>
+        }
 
         <dt>
             @Html.DisplayNameFor(model => model.ProductName)
@@ -61,7 +54,6 @@
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+@*<p>
+    @Html.ActionLink("<< Back to List", "ComeBack", new { @class = "btn btn-primary" })
+</p>*@

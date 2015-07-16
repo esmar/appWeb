@@ -19,6 +19,8 @@ namespace Proyect1.Controllers
         private ApplicationDbContext db = new ApplicationDbContext();
 
         // GET: Products_Trans
+        [RoutePrefix("Products")]
+        [Route("{action=index}")]
         public ActionResult Index()
         {
             //db.Products.ToList()
@@ -27,6 +29,7 @@ namespace Proyect1.Controllers
         }
         
         // GET: Products_Trans/Details/5
+        [Route("Details/{message:maxlength(3)?}")]
         public ActionResult Details(int? id)
         {
             
@@ -35,6 +38,7 @@ namespace Proyect1.Controllers
             
             return View(products);
         }
+        [Route("Details/{message:maxlength(3)?}")]
         public ActionResult Details2(int? id)
         {
 
@@ -43,6 +47,7 @@ namespace Proyect1.Controllers
 
             return View(products);
         }
+        [Route("Details/{message:maxlength(3)?}")]
         public ActionResult Details3(int? id)
         {
 
@@ -89,6 +94,7 @@ namespace Proyect1.Controllers
         }
        
         // GET: Products_Trans/Edit/5
+        [Route("Edit/{message:maxlength(3)?}")]
         public ActionResult Edit(int? id)
         {
             if (id == null)
@@ -123,6 +129,7 @@ namespace Proyect1.Controllers
         }
 
         // GET: Products_Trans/Delete/5
+        [Route("Delete/{message:maxlength(3)?}")]
         public ActionResult Delete(int? id)
         {
             if (id == null)
